@@ -1,0 +1,28 @@
+[
+    {
+        "title": "Say Hello, World! with C++ ",
+        "description": "This is a simple challenge to help you practice printing to stdout. You may also want to complete Solve Me First in C++ before attempting this challenge.",
+        "difficulty": "easy",
+        "score": 5,
+        "example": "",
+        "input_format": "",
+        "output_format": "",
+        "sample_input": "",
+        "sample_output": "",
+        "test_case": "print hello world",
+        "test_result": "Hello, World!"
+    },
+    {
+        "title": "Say Hello, World! with C++ ",
+        "description": "This is a simple challenge to help you practice printing to stdout. You may also want to complete Solve Me First in C++ before attempting this challenge.",
+        "difficulty": "easy",
+        "score": 5,
+        "example": "",
+        "input_format": "",
+        "output_format": "",
+        "sample_input": "",
+        "sample_output": "",
+        "test_case": "print hello world",
+        "test_result": "Hello, World!"
+    }
+]

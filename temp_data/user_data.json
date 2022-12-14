@@ -1,0 +1,9 @@
+[
+    {
+        "name": "test1",
+        "email": "test@test.com",
+        "role": "user",
+        "password": "test1234",
+        "passwordConfirm": "test1234"
+    }
+]
