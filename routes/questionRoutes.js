@@ -4,6 +4,7 @@ const authController = require('./../controllers/authController');
 const commentRouter = require('./../routes/commentRoutes');
 
 
+
 const router = express.Router();
 
 router.use('/:questionid/comment', commentRouter);
