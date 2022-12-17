@@ -9,7 +9,7 @@ const router = express.Router({ mergeParams: true });
 router
     .route('/')
     .get(commentController.getAllComment)
-    .post(authController.protect, authController.restrictTo('user'), commentController.createComment);
+    .post(commentController.createComment);
 
 
 

@@ -1,13 +1,15 @@
 const express = require('express');
 const questionController = require('./../controllers/questionController');
 const authController = require('./../controllers/authController');
-const commentRouter = require('./../routes/commentRoutes');
+const commentController = require('./../controllers/commentController');
 
 
 
 const router = express.Router();
 
-router.use('/:questionid/comment', commentRouter);
+router.route('/:questionid/comment')
+    .get(commentController.getAllComment)
+    .post(commentController.createComment);
 
 
 //this line is to use /api/v1/question/ in get and post

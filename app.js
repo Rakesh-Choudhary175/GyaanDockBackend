@@ -1,6 +1,6 @@
 
 var cors = require('cors');
-
+const Axios = require("axios");
 const express = require('express');
 const morgan = require('morgan');
 
@@ -13,7 +13,6 @@ const commentRoutes = require('./routes/commentRoutes');
 const app = express();
 
 
-
 app.use(cors({
     origin: '*'
 }));
@@ -21,6 +20,8 @@ app.use(cors({
 app.use(morgan('dev'));
 
 app.use(express.json());
+
+
 
 app.use('/api/v1/question', questionRoutes);
 app.use('/api/v1/user', userRoutes);
