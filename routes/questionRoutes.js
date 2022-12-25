@@ -9,7 +9,7 @@ const router = express.Router();
 
 router.route('/:questionid/comment')
     .get(commentController.getAllComment)
-    .post(commentController.createComment);
+    .post(authController.protect, authController.restrictTo('user'), commentController.createComment);
 
 
 //this line is to use /api/v1/question/ in get and post
