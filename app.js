@@ -1,42 +1,39 @@
-
-var cors = require('cors');
+var cors = require("cors");
 const Axios = require("axios");
-const express = require('express');
-const morgan = require('morgan');
+const express = require("express");
+const morgan = require("morgan");
 
-const questionRoutes = require('./routes/questionRoutes');
-const userRoutes = require('./routes/userRoutes');
-const commentRoutes = require('./routes/commentRoutes');
-
-
+const questionRoutes = require("./routes/questionRoutes");
+const userRoutes = require("./routes/userRoutes");
+const commentRoutes = require("./routes/commentRoutes");
 
 const app = express();
 
+app.use(
+  cors({
+    origin: "*",
+    credentials: true,
+  })
+);
+app.use(
+  cors({
+    methods: ["GET", "POST", "DELETE", "UPDATE", "PUT", "PATCH"],
+  })
+);
 
-app.use(cors({
-    origin: '*',
-    credentials: true
-}));
-app.use(cors({
-    methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']
-}));
-
-app.use(morgan('dev'));
+app.use(morgan("dev"));
 
 app.use(express.json());
 
+app.use("/api/v1/question", questionRoutes);
+app.use("/api/v1/user", userRoutes);
+app.use("/api/v1/comment", commentRoutes);
 
-
-app.use('/api/v1/question', questionRoutes);
-app.use('/api/v1/user', userRoutes);
-app.use('/api/v1/comment', commentRoutes);
-
-app.all('*', (req, res, next) => {
-    res.status(404).json({
-        status: 'fail',
-        message: `Can't find ${req.originalUrl} on this server!`
-    });
+app.all("*", (req, res, next) => {
+  res.status(404).json({
+    status: "fail",
+    message: `Can't find ${req.originalUrl} on this server!`,
+  });
 });
-
 
 module.exports = app;
